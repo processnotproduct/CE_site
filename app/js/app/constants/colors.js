@@ -1,0 +1,15 @@
+var grey_0=	    "#FFFFFF",
+    grey_50=	"#FAFAFA",
+    grey_100=	"#F5F5F5",
+    grey_200=	"#EEEEEE",
+    grey_300=	"#E0E0E0",
+    grey_400=	"#BDBDBD",
+    grey_500=	"#9E9E9E",
+    grey_600=	"#757575",
+    grey_700=	"#616161",
+    grey_800=	"#424242",
+    grey_900=	"#212121",
+
+    color_0= "#F5FA9E",
+    color_1= "#EFFB41",
+    color_2= "#B1B937";
