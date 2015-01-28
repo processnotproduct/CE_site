@@ -1,0 +1,68 @@
+/****************************************/
+/* Imports								*/
+/****************************************/
+@import "./sizes.less";
+@import "./colors.less";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+/****************************************/
+/* Properties							*/
+/****************************************/
+@ff: "Roboto", sans-serif;
+
+/****************************************/
+/* Texts								*/
+/****************************************/
+*, h1, h2, h3, h4, h5, h6, a, p, b
+{
+	font-family: @ff;
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	color: @grey-50;
+	font-weight: 100;
+	font-size: @s*.56;
+	line-height: @s*.56;
+	margin-bottom: @s*.17;
+}
+h1 b
+{
+	color: @color-1;
+	font-weight: 300;
+}
+
+h2, h3
+{
+	color: @grey-0;
+	font-weight: 400;
+	font-size: @s*.20;
+	line-height: @s*.32;
+	margin-bottom: @s*.13;
+}
+h2 b, h3 b
+{
+	color: @color-1;
+	font-weight: 400;
+}
+
+p, a
+{
+	color: @grey-700;
+	font-weight: 400;
+	font-size: @s*.15;
+	line-height: @s*.22;
+}
+
+p b
+{
+	font-weight: 400;
+}
+
+a
+{
+	text-decoration: none;
+	outline: none;
+}
