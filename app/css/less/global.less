@@ -1,0 +1,452 @@
+/****************************************/
+/* Imports								*/
+/****************************************/
+@import "./reset.less";
+@import "./colors.less";
+@import "./sizes.less";
+@import "./fonts.less";
+
+/****************************************/
+/* Properties							*/
+/****************************************/
+
+/****************************************/
+/* Functions							*/
+/****************************************/
+.size(@w:inherit, @h:inherit)
+{
+	width: @w;
+	height: @h;
+}
+
+.min-size()
+{
+	min-width: @s*3.2;
+	min-height: @s*4.8;
+}
+
+.border-radius(@r)
+{
+	-webkit-border-radius: @r;
+	-moz-border-radius: @r;
+	-ms-border-radius: @r;
+	-o-border-radius: @r;
+	border-radius: @r;
+}
+
+.bg(@src, @r:repeat, @c:transparent, @p:left top)
+{
+	background-color: @c;
+	background-image: url("@{src}");
+	background-repeat: @r;
+	background-position: @p;
+}
+
+/****************************************/
+/* Global								*/
+/****************************************/
+.line
+{
+	.size(@s*.3, @s*.04);
+	display: block;
+	margin: @s*.25 auto;
+	background: @grey-800;
+}
+.so-buttons
+{
+	.size((@s*.32)*4, @s*.32);
+	display: block;
+	overflow: hidden;
+	position: relative;
+	.so-btn
+	{
+		.size(@s*.32, @s*.32);
+		display: block;
+		position: relative;
+		float: left;
+		svg
+		{
+			display: block;
+			position: absolute;
+			left: @s*.06;
+			top: @s*.06;
+			path
+			{
+				fill: @grey-500;
+			}
+		}
+	}
+	/* Hover */
+	.so-btn.twitter:hover svg path { fill: @color-twitter !important; }
+	.so-btn.dribble:hover svg path { fill: @color-dribble !important; }
+	.so-btn.linkedin:hover svg path { fill: @color-linkedin !important; }
+	.so-btn.instagram:hover svg path { fill: @color-instagram !important; }
+}
+.btn
+{
+	.border-radius(100%);
+	.size(@s*.56, @s*.56);
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	background: @grey-50;
+	margin-left: -(@s*.28);
+	svg path
+	{
+		fill:@grey-900;
+	}
+}
+.btn.top
+{
+	top: -(@s*.28);
+}
+.btn.bottom
+{
+	bottom: -(@s*.28);
+}
+
+/****************************************/
+/* Home									*/
+/****************************************/
+#app
+{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+
+	/****************************************/
+	/* Home									*/
+	/****************************************/
+	nav#nav
+	{
+		display: block;
+		position: fixed;
+		overflow: hidden;
+		z-index: 7;
+		width: 100%;
+		background: @grey-300;
+		clear: both;
+		.buttons
+		{
+			overflow: hidden;
+			float: left;
+			margin-left: @s*.14;
+			a
+			{
+				display: block;
+				overflow: hidden;
+				float: left;
+				line-height: @s*.24;
+				padding: @s*.23 @s*.12 @s*.23 @s*.11;
+			}
+		}
+		#mebd-logotype
+		{
+			.size(@s*.7, @s*.7);
+			display: block;
+			position: absolute;
+			left: 50%;
+			margin-left:-(@s*.35);
+			svg path
+			{
+				fill: @grey-50;
+			}
+		}
+		.so-buttons
+		{
+			float: right;
+			margin: @s*.19 @s*.14 0 0;
+			.so-btn svg path
+			{
+				fill: @grey-700;
+			}
+		}
+		#er-logotype
+		{
+			.size(@s*.6, @s*.6);
+			display: block;
+			position: absolute;
+			left: 50%;
+			margin-left:-(@s*.3);
+			margin-top: 5px;
+			box-shadow: rgba(0, 0, 0, 0.239216) 0px 2px 6px 0px;
+      border-radius: 100%;
+			svg path
+			{
+				fill: @grey-50;
+			}
+		}
+	}
+
+	/****************************************/
+	/* Section								*/
+	/****************************************/
+	section
+	{
+		position: relative;
+		width: 100%;
+		background: @grey-900;
+		.holder
+		{
+			position: relative;
+
+			width: 100%;
+			div.transbox {
+        background-color: #000;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+			.text
+			{
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				h1, h2, h3, p
+				{
+					display: block;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	/****************************************/
+	/* Home									*/
+	/****************************************/
+	#home
+	{
+		position: fixed;
+		z-index: 0;
+
+		.holder
+		{
+			.text
+			{
+				#logotype
+				{
+					display: block;
+					overflow: hidden;
+					position: relative;
+					.size(@s*3,@s*3);
+					margin: 0 auto @s*.6 auto;
+					svg
+					{
+						display: block;
+						position: absolute;
+					}
+				}
+			}
+		}
+	}
+	#home-spacer
+	{
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		max-width: 1px;
+	}
+
+	/****************************************/
+	/* Projects								*/
+	/****************************************/
+	#projects
+	{
+		background: @grey-50;
+		z-index: 6;
+		.holder
+		{
+			background: @grey-900;
+			.project
+			{
+				position: absolute;
+				overflow: hidden;
+				width: 100%;
+				left: 0;
+				top: 0;
+				.text-left,
+				.text-right
+				{
+					position: absolute;
+					width: 40%;
+					left: 0;
+					.text
+					{
+						padding-left:20%;
+						padding-right:5%;
+						h1, h3, p, a
+						{
+							text-align: left;
+							color: @grey-50;
+							margin-bottom: @s*.40;
+						}
+						h3
+						{
+							opacity: .75;
+						}
+						h1 b {
+							color: #FFFFFF;
+							font-weight: 300;
+						}
+					}
+				}
+				.text-right
+				{
+					left: 60%;
+					.text
+					{
+						padding-left:5%;
+						padding-right:20%;
+					}
+				}
+				.img-left,
+				.img-right
+				{
+					position: absolute;
+					width: 60%;
+					left: 0;
+					img
+					{
+						display: block;
+						float: right;
+					}
+				}
+				.img-right
+				{
+					left: 40%;
+					img
+					{
+						display: block;
+						float: left;
+					}
+				}
+			}
+
+			.btn-previous,
+			.btn-next
+			{
+				.border-radius(100%);
+				.size(@s*.56, @s*.56);
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				// left: 90%;
+				margin-left: -(@s*.28);
+				background: #EC407A;
+				background: @grey-500;
+				svg path
+				{
+					fill:@grey-50;
+				}
+			}
+			.btn-previous
+			{
+			  left: 10%;
+				bottom: -(@s*.28);
+			}
+			.btn-next
+			{
+			  left: 30%;
+				bottom: -(@s*.28);
+			}
+		}
+	}
+
+	/****************************************/
+	/* Contact								*/
+	/****************************************/
+	#contact
+	{
+		background: none;
+		z-index: 1;
+		.holder
+		{
+			.bg( "../svg/info/bg.svg", repeat, @grey-50 );
+			.text
+			{
+				h1
+				{
+					color: @color-1;
+				}
+				h3
+				{
+					color: @grey-500;
+				}
+				h3 a, h3 b
+				{
+					color: @grey-900;
+					font-size: @s*.2;
+				}
+				a:hover
+				{
+					color: @color-1;
+				}
+			}
+		}
+	}
+
+	/****************************************/
+	/* Contact								*/
+	/****************************************/
+	footer
+	{
+		display: none;
+		overflow: hidden;
+		position: fixed;
+		z-index: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		.holder
+		{
+			overflow: hidden;
+			padding: @s*.7 0 @s*.7 0;
+			background: @grey-900;
+			clear: both;
+			.row
+			{
+				overflow: hidden;
+				width: 100%;
+				.col
+				{
+					overflow: hidden;
+					float: left;
+					width: 50%;
+					p, a
+					{
+						text-align: center;
+						font-size: @s*.13;
+						line-height: @s*.17;
+					}
+					p b, a
+					{
+						color: @grey-900;
+					}
+					.scroll-btn
+					{
+						.size(@s*.32, @s*.32);
+						display: block;
+						position: relative;
+						overflow: hidden;
+						margin: @s*.07 auto;
+						svg
+						{
+							display: block;
+							position: absolute;
+							path
+							{
+								fill: @grey-500;
+							}
+						}
+					}
+					.so-buttons
+					{
+						margin: @s*.01 auto;
+					}
+				}
+			}
+		}
+	}
+}
